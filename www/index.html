@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="cordova.js"></script>
+  <script src="js/LesxhModule.js"></script>
+  <script src="js/Services.js"></script>
+  <script src="js/ParentController.js"></script>
+  <script src="js/SideController.js"></script>
+  <script src="js/HomeController.js"></script>
+  <script src="js/SettingsController.js"></script>
+</head>
+<body ng-app="LesxhModule" ng-controller="SideController">
+  <ion-side-menus>
+    <ion-side-menu-content>
+      <ion-header-bar class="bar-positive">
+        <button class="button button-icon ion-navicon" ng-click="toggleLeft()" ng-hide="$exposeAside.active"></button>
+        <h1 class="title">{{data.myUniversity}}</h1>
+        <button class="button button-icon ion-loop" ng-show="isRefreshFunctionDefined()" ng-click="refresh.fun()"></button>
+      </ion-header-bar>
+      <ion-nav-view>
+      </ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu>
+      <ion-header-bar class="bar-royal">
+        <h1 class="title">Επιλογές</h1>
+      </ion-header-bar>
+      <ion-content>
+        <div class="list">
+          <a nav-clear menu-close class="item item-icon-left" ui-sref="home">
+            <i class="icon ion-ios7-home"></i>
+            Μενού
+          </a>
+          <a nav-clear menu-close class="item item-icon-left" href="#"
+          onclick="window.open('https://twitter.com/crosmob', '_system', 'location=yes'); return false;">
+            <i class="icon ion-social-twitter"></i>
+            Twitter
+          </a>
+          <a nav-clear menu-close class="item item-icon-left" href="#"
+            onclick="window.open('https://www.facebook.com/crosmob', '_system', 'location=yes'); return false;">
+            <i class="icon ion-social-facebook"></i>
+            Facebook
+          </a>
+          <a nav-clear menu-close class="item item-icon-left" href="#"
+            onclick="window.open('https://www.linkedin.com/company/crosmob', '_system', 'location=yes'); return false;">
+            <i class="icon ion-social-linkedin"></i>
+            LinkedIn
+          </a>
+          <a nav-clear menu-close class="item item-icon-left" ui-sref="settings">
+            <i class="icon ion-ios7-gear"></i>
+            Ρυθμίσεις
+          </a>
+        </div>
+      </ion-content>
+    </ion-side-menu>
+
+  </ion-side-menus>
+</body>
+</html>

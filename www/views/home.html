@@ -1,0 +1,22 @@
+<div class="bar bar-subheader">
+  <div class="button-bar">
+    <button class="button button-light" ng-class='{"button\-positive": selectedButton==1}' ng-click="selectToday()">Σήμερα</button>
+    <button class="button button-light" ng-class='{"button\-positive": selectedButton==2}' ng-click="selectTomorrow()">Αύριο</button>
+  </div>
+</div>
+<ion-content class="padding has-subheader">
+  <div class="card">
+    <div class="item item-divider">
+      Μεσημεριανό
+    </div>
+    <div class="item item-text-wrap" ng-show="menu.mesimeri.kyriosPiata" ng-bind="menu.mesimeri.kyriosPiata"></div>
+    <div class="item item-text-wrap" ng-show="menu.mesimeri.synodeytika" ng-bind="'Συνοδευτικά: '+menu.mesimeri.synodeytika"></div>
+    <div class="item item-text-wrap" ng-hide="menu.mesimeri.kyriosPiata || menu.mesimeri.synodeytika">Μη διαθέσιμο</div>
+    <div class="item item-divider">
+      Βραδινό
+    </div>
+    <div class="item item-text-wrap" ng-show="menu.bradi.kyriosPiata" ng-bind="menu.bradi.kyriosPiata"></div>
+    <div class="item item-text-wrap" ng-show="menu.bradi.synodeytika" ng-bind="'Συνοδευτικά: '+menu.bradi.synodeytika"></div>
+    <div class="item item-text-wrap" ng-hide="menu.bradi.kyriosPiata || menu.bradi.synodeytika">Μη διαθέσιμο</div>
+  </div>
+</ion-content>
